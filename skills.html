@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills - My Portfolio</title>
+  <link rel="icon" href="images/r2.jpg" type="image/png">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('images/skillbg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      height: 100vh;
+    }
+
+    .skills-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .skills-title {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1000px;
+      padding: 20px;
+      gap: 50px;
+    }
+
+    /* Responsive for Tablets */
+    @media (max-width: 1024px) {
+      .skill-image img {
+        width: 180px;
+        height: 180px;
+      }
+
+      .skill-text h3 {
+        font-size: 1.6rem;
+      }
+
+      .skills-section {
+        padding: 40px 15px;
+      }
+
+      .skills-title {
+        font-size: 2rem;
+      }
+    }
+
+    /* Responsive for Mobiles */
+    @media (max-width: 768px) {
+      .skill-item {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 20px;
+        padding: 10px;
+      }
+
+      .skill-image img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .skill-text {
+        text-align: center;
+      }
+
+      .skill-text h3 {
+        font-size: 1.4rem;
+      }
+
+      .skills-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+      }
+
+      .nav-button {
+        font-size: 2rem;
+        padding: 8px 14px;
+        bottom: 40px;
+      }
+    }
+
+    /* Extra Small Devices (Phones) */
+    @media (max-width: 480px) {
+      .skill-image img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .skill-text h3 {
+        font-size: 1.2rem;
+      }
+
+      .progress-bar-container {
+        height: 16px;
+      }
+
+      .skills-title {
+        font-size: 1.5rem;
+      }
+
+      .nav-button {
+        font-size: 1.5rem;
+        padding: 6px 10px;
+      }
+    }
+
+    .skill-image img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid white;
+    }
+
+    .skill-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .skill-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 30px;
+      overflow: hidden;
+      height: 20px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background-color: #00b1d8;
+      border-radius: 30px;
+      transition: width 2s ease-out;
+    }
+
+    /* Zigzag effect */
+    .skills-container .skill-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    /* Navigation Buttons */
+    .nav-button {
+      position: fixed;
+      bottom: 80px;
+      font-size: 2.5rem;
+      color: white;
+      background-color: #00b1d8;
+      border-radius: 50%;
+      padding: 10px 16px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      z-index: 999;
+    }
+
+    .nav-button:hover {
+      background-color: #008bb5;
+      transform: scale(1.1);
+    }
+
+    #next-button {
+      right: 30px;
+    }
+
+    #previous-button {
+      left: 30px;
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+
+  <section class="skills-section">
+    <h2 class="skills-title">My Skills</h2>
+    <div class="skills-container">
+
+      <!-- Skill 1 -->
+      <div class="skill-item">
+        <div class="skill-image">
+          <img src="images/html.jpeg" alt="HTML" />
+        </div>
+        <div class="skill-text">
+          <h3>HTML</h3>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 95%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 2 -->
+      <div class="skill-item">
+        <div class="skill-image">
+          <img src="images/css.jpeg" alt="CSS" />
+        </div>
+        <div class="skill-text">
+          <h3>CSS</h3>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 90%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 3 -->
+      <div class="skill-item">
+        <div class="skill-image">
+          <img src="images/js.jpeg" alt="JavaScript" />
+        </div>
+        <div class="skill-text">
+          <h3>JavaScript</h3>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 85%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 4 -->
+      <div class="skill-item">
+        <div class="skill-image">
+          <img src="images/java.jpeg" alt="Java" />
+        </div>
+        <div class="skill-text">
+          <h3>Java</h3>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 80%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 5 -->
+      <div class="skill-item">
+        <div class="skill-image">
+          <img src="images/python.jpeg" alt="Python" />
+        </div>
+        <div class="skill-text">
+          <h3>Python</h3>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 88%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 6 -->
+      <div class="skill-item">
+        <div class="skill-image">
+          <img src="images/mysql.jpeg" alt="MySQL" />
+        </div>
+        <div class="skill-text">
+          <h3>MySQL</h3>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 82%;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Navigation Buttons -->
+  <a href="project.html" id="next-button" class="nav-button" title="Next Page">&#10132;</a>
+  <a href="education.html" id="previous-button" class="nav-button" title="Previous Page">&#10132;</a>
+
+  <script>
+    // Animate progress bars when page loads
+    window.addEventListener('DOMContentLoaded', () => {
+      const bars = document.querySelectorAll('.progress-bar');
+      bars.forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => {
+          bar.style.width = width;
+        }, 100); // delay for smoother effect
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - My Portfolio</title>
+    <link rel="icon" href="images/r2.jpg" type="image/png">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Background Image */
+        body {
+            background-image: url('images/PEN.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Education Section */
+        .education-section {
+            padding: 50px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .education-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        /* Individual Education Items */
+        .education-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 20px;
+            cursor: pointer;
+            animation: slideIn 2s ease-out;
+            justify-content: center;
+        }
+
+        .education-item .education-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            transition: box-shadow 0.3s ease-in-out;
+            object-position: center;
+        }
+
+        .education-item .education-image:hover {
+            box-shadow: 0 0 30px rgba(255, 255, 255, 1);
+        }
+
+        .education-item .education-details {
+            flex-grow: 1;
+            text-align: left;
+            font-size: 1.2rem;
+        }
+
+        .education-item .score {
+            font-size: 1.5rem;
+            font-weight: bold;
+            white-space: nowrap;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-item .score span {
+            display: block;
+            animation: scrolling 5s linear infinite;
+        }
+
+        @keyframes scrolling {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+        .certificate-view {
+            display: none;
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            z-index: 1000;
+            width: 60%;
+            text-align: center;
+        }
+
+        .certificate-view img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .certificate-view .download-btn {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .certificate-view .download-btn:hover {
+            background-color: #555;
+        }
+
+        .certificate-view .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        /* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+    .education-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .education-item .education-image {
+        width: 220px;
+        height: 220px;
+    }
+
+    .education-item .education-details {
+        text-align: center;
+        font-size: 1.1rem;
+    }
+
+    .education-title {
+        font-size: 2rem;
+    }
+
+    .nav-button {
+        font-size: 2rem;
+        padding: 8px 14px;
+    }
+}
+
+/* Mobile Devices (≤ 768px) */
+@media (max-width: 768px) {
+    .education-section {
+        padding: 30px 15px;
+    }
+
+    .education-title {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+    }
+
+    .education-item {
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    .education-item .education-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .education-item .education-details {
+        font-size: 1rem;
+    }
+
+    .education-item .score {
+        font-size: 1.2rem;
+    }
+
+    .certificate-view {
+        width: 90%;
+        top: 5%;
+        right: 5%;
+        padding: 20px;
+    }
+
+    .nav-button {
+        font-size: 1.8rem;
+        padding: 6px 12px;
+        bottom: 60px;
+    }
+}
+
+/* Small Phones (≤ 480px) */
+@media (max-width: 480px) {
+    .education-title {
+        font-size: 1.5rem;
+    }
+
+    .education-item .education-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .education-item .education-details {
+        font-size: 0.95rem;
+    }
+
+    .education-item .score {
+        font-size: 1rem;
+    }
+
+    .certificate-view .download-btn {
+        font-size: 0.95rem;
+        padding: 8px 14px;
+    }
+
+    .certificate-view .close-btn {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+
+    .nav-button {
+        font-size: 1.5rem;
+        padding: 5px 10px;
+        bottom: 50px;
+    }
+}
+
+
+        /* Navigation Arrow Buttons */
+        .nav-button {
+            position: fixed;
+            bottom: 80px;
+            font-size: 2.5rem;
+            color: white;
+            background-color: #00b1d8;
+            border-radius: 50%;
+            padding: 10px 16px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            z-index: 999;
+        }
+
+        .nav-button:hover {
+            background-color: #008bb5;
+            transform: scale(1.1);
+        }
+
+        /* Positioning */
+        #next-button {
+            right: 30px;
+        }
+
+        #previous-button {
+            left: 30px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="education-section">
+        <h2 class="education-title">My Education</h2>
+
+        <!-- Education Item 1 -->
+        <div class="education-item" onclick="showCertificate('govt_boys_10_certificate.jpg')">
+            <img src="images/govt boys 10.jpg" alt="Degree Image 1" class="education-image">
+            <div class="education-details">
+                <p>GOVT BOYS SCHOOL</p>
+                <p>STATE BOARD, 2015 - 2021</p>
+                <p class="score"><span>Score: 85%</span></p>
+            </div>
+        </div>
+
+        <!-- Education Item 2 -->
+        <div class="education-item" onclick="showCertificate('govt_boys_12_certificate.jpg')">
+            <img src="images/govt boys 12.jpg" alt="Degree Image 2" class="education-image">
+            <div class="education-details">
+                <p>GOVT BOYS SCHOOL</p>
+                <p>STATE BOARD, 2021 - 2023</p>
+                <p class="score"><span>Score: 90%</span></p>
+            </div>
+        </div>
+
+        <!-- Education Item 3 -->
+        <div class="education-item" onclick="showCertificate('stanford.jpg')">
+            <img src="images/stanford.jpg" alt="Degree Image 3" class="education-image">
+            <div class="education-details">
+                <h3>Bachelor's of Technology Degree in AI & Data Science</h3>
+                <p>STANFORD UNIVERSITY LONDON, 2023 - 2027</p>
+                <p class="score"><span>Score: 9.25 CGP</span></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="certificate-view" id="certificateView">
+        <button class="close-btn" onclick="closeCertificate()">X</button>
+        <img id="images/certificateImage" src="" alt="Certificate">
+        <a id="downloadLink" href="#" class="download-btn" download>Download Certificate</a>
+    </div>
+
+    <!-- Next Arrow Button (Right) -->
+    <a href="skills.html" id="next-button" class="nav-button" title="Go to Skills Page">
+        &#10132;
+    </a>
+
+    <!-- Previous Arrow Button (Left - Rotated) -->
+    <a href="index.html" id="previous-button" class="nav-button" title="Go to Previous Page" style="transform: rotate(180deg);">
+        &#10132;
+    </a>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+
+    <script>
+        function showCertificate(certificate) {
+            const certificateView = document.getElementById('certificateView');
+            const certificateImage = document.getElementById('certificateImage');
+            const downloadLink = document.getElementById('downloadLink');
+            certificateImage.src = certificate;
+            downloadLink.href = certificate;
+            certificateView.style.display = 'block';
+        }
+
+        function closeCertificate() {
+            const certificateView = document.getElementById('certificateView');
+            certificateView.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

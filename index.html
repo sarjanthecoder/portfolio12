@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - 3D Animation Portfolio</title>
+  <link rel="icon" href="images/r2.jpg" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('images/port bg.jpg');
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #00b1d8;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;  
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-size: 1.2rem;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    #about {
+      padding: 150px 60px 50px;
+      text-align: left;
+      max-width: 800px;
+    }
+
+    #about p {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin: 60px 0;
+    }
+
+    #profile-image {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      position: absolute;
+      top: 80px;
+      right: 0;
+      z-index: 10;
+    }
+
+    footer {
+      background-color: #111;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    #next-button {
+      position: fixed;
+      bottom: 80px;
+      right: 30px;
+      font-size: 2.5rem;
+      color: white;
+      background-color: #00b1d8;
+      border-radius: 50%;
+      padding: 10px 16px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      z-index: 999;
+    }
+
+    #next-button:hover {
+      background-color: #008bb5;
+      transform: scale(1.1);
+    }
+
+    .cursor {
+      display: inline-block;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      from, to { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    /* Media Queries */
+    @media (max-width: 1024px) {
+      #profile-image {
+        width: 250px;
+        height: 250px;
+        top: 90px;
+        right: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+      }
+
+      #about {
+        padding-top: 200px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      #profile-image {
+        width: 200px;
+        height: 200px;
+        top: 100px;
+        right: 0;
+      }
+
+      #next-button {
+        bottom: 60px;
+        right: 20px;
+        font-size: 2rem;
+        padding: 8px 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.3rem;
+      }
+
+      nav a {
+        font-size: 0.95rem;
+      }
+
+      #about p {
+        font-size: 1.3rem;
+      }
+
+      #profile-image {
+        width: 160px;
+        height: 160px;
+        top: 110px;
+        right: 0;
+      }
+
+      #next-button {
+        font-size: 1.7rem;
+        padding: 6px 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>My 3D Animation Portfolio</h1>
+    <nav>
+      <a href="skills.html">Skills</a>
+      <a href="education.html">Education</a>
+      <a href="certificate.html">Certifications</a>
+      <a href="project.html">Projects</a>
+      <a href="contactt.html">Contact</a>
+      <a href="#">.......</a>
+    </nav>
+  </header>
+
+  <!-- Profile Image -->
+  <img src="images/port image.jpg" alt="Profile Image" id="profile-image" />
+
+  <!-- About Section with Typing Effect -->
+  <div id="about">
+    <div id="typing-text"></div>
+  </div>
+
+  <!-- Next Button -->
+  <a href="education.html" id="next-button" title="Go to Education">&#10132;</a>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 My 3D Animation Portfolio</p>
+  </footer>
+
+  <!-- Typing Script -->
+  <script>
+    const sentences = [
+      "🚀 I am Sarjan",
+      "🚀 I’m currently pursuing B.Tech 2nd year.",
+      "🚀 I'm passionate about Full Stack Development.",
+      "🚀 I also love working on animation and creative design.",
+      "🚀 My dream is to be the CEO of my own tech company."
+    ];
+
+    const typingElement = document.getElementById("typing-text");
+    let currentSentence = 0;
+    let currentChar = 0;
+
+    function typeSentence() {
+      if (currentSentence < sentences.length) {
+        const currentText = sentences[currentSentence];
+        typingElement.innerHTML = sentences
+          .slice(0, currentSentence)
+          .map(s => `<p>${s}</p>`)
+          .join('') + `<p>${currentText.slice(0, currentChar)}<span class="cursor">|</span></p>`;
+
+        if (currentChar < currentText.length) {
+          currentChar++;
+          setTimeout(typeSentence, 15); // Typing speed
+        } else {
+          currentSentence++;
+          currentChar = 0;
+          setTimeout(typeSentence, 500); // Pause between sentences
+        }
+      }
+    }
+
+    typeSentence();
+  </script>
+
+</body>
+</html>
